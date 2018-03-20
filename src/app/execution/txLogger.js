@@ -195,13 +195,13 @@ function renderKnownTransaction (self, data) {
   var obj = {from, to}
   var tx = yo`
     <span id="tx${data.tx.hash}">
-      <div class="${css.log}" onclick=${e => txDetails(e, tx, data, obj)}>
+      <button class="${css.log}" onclick=${e => txDetails(e, tx, data, obj)}>
         <i class="${css.caret} fa fa-caret-right"></i>
         ${context(self, {from, to, data})}
         <div class=${css.buttons}>
           <div class=${css.debug} onclick=${(e) => debug(e, data, self)}>Debug</div>
         </div>
-      </div>
+      </button>
     </span>
   `
   return tx
